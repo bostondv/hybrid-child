@@ -34,8 +34,6 @@ include('library/functions/fields.php');
  * @link http://codex.wordpress.org/Plugin_API/Action_Reference
  */ 
 // add_action( 'action_hook_name','custom_function_name' );
-add_action('hybrid_header', 'skeleton_header_additional', 11);
-add_action('hybrid_after_header', 'skeleton_banner', 30);
 add_action('wp_head','skeleton_mobile_viewport_optimized');
 add_action('wp_head', 'skeleton_hires_icons');
 add_action('init', 'skeleton_load_scripts');
@@ -52,9 +50,9 @@ add_action('init', 'skeleton_remove_dropdown');
  */
 add_filter('hybrid_meta_template', 'skeleton_disabler');
 add_filter('the_generator', 'skeleton_disabler');
-add_filter('breadcrumb_trail', 'skeleton_disabler');
-add_filter('comments_template', 'skeleton_remove_comments', 11);
-add_filter('sidebars_widgets', 'skeleton_conditional_widgets');
+//add_filter('breadcrumb_trail', 'skeleton_disabler');
+//add_filter('comments_template', 'skeleton_remove_comments', 11);
+//add_filter('sidebars_widgets', 'skeleton_conditional_widgets');
 
 
 /**
@@ -62,7 +60,7 @@ add_filter('sidebars_widgets', 'skeleton_conditional_widgets');
  *
  * @link http://codex.wordpress.org/Plugin_API/Action_Reference
  */ 
-remove_action('wp_print_styles', 'add_advanced_recent_posts_widget_stylesheet');
+//remove_action('wp_print_styles', 'add_advanced_recent_posts_widget_stylesheet');
 
 /**
  * Add editor style
@@ -113,24 +111,10 @@ function skeleton_hello_world() {
 }
 
 /**
- * Parent branding and social links
- */
-function skeleton_header_additional() {
-	locate_template('header-additional.php', true);
-}
-
-/**
- * Main banner
- */
-function skeleton_banner() {
-	locate_template('header-banner.php', true);
-}
-
-/**
  * Setup custom image sizes
  */
 function skeleton_image_sizes() {
-	add_image_size( 'banner', 960, 375, true );
+	//add_image_size( 'banner', 960, 375, true );
 }
 
 /**
@@ -166,10 +150,8 @@ function skeleton_load_scripts() {
  */
 function skeleton_load_styles() {
 	if ( !is_admin() ) { 
-		wp_register_style( 'opensans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700', false, '1.0');
-		wp_enqueue_style( 'opensans' );
-		//wp_register_style( 'varela', 'http://fonts.googleapis.com/css?family=Varela', false, '1.0');
-		//wp_enqueue_style( 'varela' );
+		//wp_register_style( 'opensans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700', false, '1.0');
+		//wp_enqueue_style( 'opensans' );
 	}
 }
 
