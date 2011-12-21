@@ -1,0 +1,89 @@
+/*  ------------------------------------------------------------
+	Dropdowns Stylesheet
+ 	Sets up some default dropdown menu styles
+	Style rules for both the page and category menus
+	--------------------------------------------------------- */	
+
+div.menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+div.menu a {
+	display: block;
+}
+div.menu a:hover {
+	background: #ddd;
+}
+div.menu ul ul {
+	display: none;
+}
+div.menu li.current-menu-item > ul {
+	display: block;
+}
+div.menu li.current-menu-item > a {
+	background: #ddd;
+}
+div.menu ul ul a {
+	white-space: nowrap;
+	display: block;
+	border-bottom: 1px solid #ccc;
+}
+
+/*  ------------------------------------------------------------
+	Media Queries
+	For responsive design, these override the primary
+	mobile first styles
+	--------------------------------------------------------- */	
+@media only screen and (min-width: 480px) {
+	div.menu ul {
+		font-size: 0; /* Remove inline-block spacing */
+	}
+	div.menu a {
+		display: inline-block;
+		position: relative;
+		font-size: 16px;
+	}
+	div.menu li {
+		display: inline;
+		position: relative;
+	}
+	div.menu ul ul {
+		position: absolute;
+		left: -9999px;
+		text-align: left;
+		width: 200px;
+		z-index: 99;
+		background: #fff;
+	}
+	div.menu ul ul li {
+		display: block;
+	}
+	div.menu li:hover ul {
+		display: block;
+		left: 0;
+	}
+	div.menu li:hover li ul {
+		left: -9999px;
+	}
+	div.menu li li:hover ul {
+		top: 0;
+		left: 200px;
+	}
+	div.menu li li:hover li ul {
+		left: -9999px;
+	}
+	div.menu li li li:hover ul {
+		left: 200px;
+	}
+	div.menu li:hover > a {
+		background: #ddd;
+	}
+	div.menu li:hover ul a {
+		background: none;
+	}
+	div.menu li:hover ul a:hover {
+		background: #ddd;
+	}
+}

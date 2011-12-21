@@ -1,0 +1,63 @@
+/*  ------------------------------------------------------------
+	Global
+	Mobile first css, any larger viewport only css 
+	should go in later sections
+	--------------------------------------------------------- */
+
+img,
+object,
+embed {
+	max-width: 100%;
+	height: inherit;
+}
+input,
+select,
+textarea,
+.wp-caption {
+	max-width: 100%
+}
+
+/*  ------------------------------------------------------------
+	Media Queries
+	For responsive design, these override the primary
+	mobile first styles
+	--------------------------------------------------------- */
+@media only screen and (min-width: 480px) { 
+	#body-container {
+		max-width: 960px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	#header-container {
+		overflow: hidden;
+	}
+	#container {
+		overflow: hidden;
+	}
+	.content {
+		float: left;
+		width: 50%;
+		margin: 0 25%;
+	}
+	.no-widgets .content, 
+	.no-default-widgets .content {
+		float: none;
+		width: auto;
+	}
+	#primary {
+		position: relative;
+		float: left;
+		width: 20%;
+		margin: 0 0 0 -100%;
+	}
+	#secondary {
+		position: relative;
+		float: left;
+		width: 20%;
+		margin: 0 0 0 -20%;
+	}
+	#footer-container {
+		clear: both;
+		overflow: hidden;
+	}
+}
